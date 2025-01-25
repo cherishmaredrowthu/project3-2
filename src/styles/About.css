@@ -1,0 +1,29 @@
+.about-container {
+    padding: 20px;
+    background-size: cover;
+    color: #0c0b0b;
+    text-align: left;
+    min-height: 100vh;
+  }
+  
+  .about-container h2,
+  .about-container h3 {
+    color: #ff5722;
+    margin-bottom: 10px;
+  }
+  
+  .about-container p {
+    margin: 10px 0;
+    font-size: 1.5em;
+    color: #0b0808;
+    line-height: 1.6;
+  }
+  
+  .about-container ul {
+    margin: 20px 0;
+    list-style-type: disc;
+    font-size: 1.5em;
+    color: #0c0b0b;
+    padding-left: 20px;
+  }
+  

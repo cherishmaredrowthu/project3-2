@@ -1,0 +1,96 @@
+.donor-signup-container {
+  width: 80%;
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 30px;
+  background: linear-gradient(to bottom, #ffecd2, #fcb69f);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+}
+
+.donor-signup-container h2 {
+  text-align: center;
+  color: #d84315;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.signup-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.signup-form label {
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+.signup-form .form-field {
+  display: flex;
+  flex-direction: column;
+  width: calc(50% - 10px); /* Makes 2 fields fit per row */
+}
+
+.signup-form input {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.signup-form input:focus {
+  outline: none;
+  border-color: #d84315;
+  box-shadow: 0 0 8px rgba(216, 67, 21, 0.5);
+  background-color: #fff8e1;
+}
+
+.signup-form button {
+  background-color: #d84315;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s ease;
+  margin: 20px auto 0;
+  display: block;
+}
+
+.signup-form button:hover {
+  background-color: #bf360c;
+  transform: scale(1.05);
+}
+
+.signup-form .login-link {
+  text-align: center;
+  display: block;
+  color: #d84315;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.signup-form .login-link:hover {
+  color: #bf360c;
+  text-decoration: underline;
+}
+
+.signup-form .full-width {
+  width: 50%; /* For single-row fields like email and passwords */
+}
+p{
+  font-size: 18px;
+  color: #0f0e0ea1;
+}

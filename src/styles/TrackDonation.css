@@ -1,0 +1,30 @@
+.track-donation-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .track-box {
+    background: rgba(232, 226, 226, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    color: rgb(21, 20, 20);
+    width: 60%;
+    
+  }
+  
+  .track-box h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: rgb(18, 18, 17);
+  }
+  
+  .donation-status p {
+    margin: 10px 0;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+  
