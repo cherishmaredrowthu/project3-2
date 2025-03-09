@@ -1,81 +1,136 @@
-.receiver-home-container {
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+.header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;/* Further reduced padding for a smaller header */
+}
+
+.header-left h1 {
+  color: white;
+  margin: 0;
+}
+
+.header-right {
+  display: flex;
+  gap: 10px;
+}
+
+.header-right button {
+  background-color: white;
+  border: none;
+  color: green;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header-right button:hover {
+  background-color: #FFD700;
+  color: white;
+}
+
+.nav-menu {
+  background-color: #333;
+  padding: 10px;
+}
+
+.nav-menu a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.background-container {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background-overlay {
+  color: white;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 50px;
+  border-radius: 10px;
+}
+
+.food-donation-label {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.quotation h3 {
+  color: #f1f1f1;
+  margin: 20px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.buttons {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f7fafc;
-  font-family: Arial, sans-serif;
-  flex-direction: column; /* Ensure content is stacked vertically */
-}
-
-h2 {
-  font-size: 30px;
-  font-weight: 600;
-  color: #333;
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.button-container {
-  display: flex;
-  flex-direction: column;
   gap: 20px;
-  width: 100%;
-  max-width: 450px;
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  margin-top: 30px;
 }
 
-.receiver-home-btn {
-  display: inline-block;
-  width: 100%;
-  padding: 15px;
-  font-size: 18px;
-  color: #fff;
-  background-color: #28a745;
+button {
+  padding: 15px 25px;
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
+  font-size: 18px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+  color: white;
 }
 
-.receiver-home-btn:hover {
-  background-color: #218838;
-  transform: translateY(-4px);
+.donor-button {
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.receiver-home-btn:active {
-  transform: translateY(0);
+.donor-button:hover {
+  background-color: #2196F3;
+  color: white;
 }
 
-.logout {
-  background-color: #dc3545;
+.receiver-button {
+  background-color: #FF5722;
 }
 
-.logout:hover {
-  background-color: #c82333;
+.icon {
+  margin-right: 10px;
+  font-size: 20px;
 }
 
-.receiver-home-btn:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.5);
-}
-
-@media (max-width: 500px) {
-  .button-container {
-    padding: 15px;
-  }
-
-  h2 {
-    font-size: 26px;
-  }
-
-  .receiver-home-btn {
-    font-size: 16px;
-    padding: 12px;
-  }
+button:hover {
+  opacity: 0.8;
 }

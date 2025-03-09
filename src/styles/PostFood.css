@@ -1,203 +1,55 @@
-.form-wrapper {
-  display: flex;
-  justify-content: flex-start; /* Align the form to the left */
-  align-items: center;
-  height: 100vh;
-  background: url("C:/Users/cheri/OneDrive/Documents/Desktop/Project3-2/demo/src/pages/postfood.jpg") no-repeat center center;
-  background-size: cover;
+.donation-form-container {
+  max-width: 600px;
+  margin: 20px auto;
   padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  overflow-y:inherit;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-
-/* Form container */
-.donor-form-container {
-  width: 100%;
-  max-width: 600px; /* Increased width for larger appearance */
-  padding: 40px; /* More padding for a spacious look */
-  background: #59c0e5; /* Gradient for an attractive background */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
+.donation-form-container h2 {
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-.donor-form-container:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-}
-
-/* Form heading */
-.donor-form-container h2 {
-  font-family: "Arial", sans-serif;
-  font-size: 28px; /* Larger font for emphasis */
-  color: #9d4ee6; /* White text for better contrast */
-  margin-bottom: 25px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-}
-
-/* Form group */
-.form-group {
-  margin-bottom: 25px;
-}
-
-.form-group label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #eef2f1; /* White text for better visibility */
-  font-size: 16px;
-}
-
-.form-group input {
-  width: 100%;
-  padding: 15px; /* Larger padding for comfort */
-  border: 2px solid #cbcdde;
-  border-radius: 12px;
-  box-sizing: border-box;
-  font-size: 16px;
-  outline: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.form-group input:focus {
-  border-color: #3f7bf1;
-  box-shadow: 0 0 8px hsl(48, 12%, 92%);
-}
-
-/* Location and Remove Button Same Line */
-.location-wrapper {
+.donation-form {
   display: flex;
-  align-items: center; /* Align the items (input and button) vertically */
-  gap: 10px; /* Space between the input and the button */
+  flex-direction: column;
+  gap: 15px;
 }
 
-.btn-remove {
-  background: #e4e7e2;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.btn-remove:hover {
-  background: rgb(254, 30, 45);
-}
-
-/* Food detail row */
-.food-detail-row {
+.donation-form label {
   display: flex;
-  gap: 15px; /* Increased gap for spacing */
-  margin-bottom: 15px;
-}
-
-.food-detail-row input {
-  flex: 1;
-  padding: 12px;
-  font-size: 15px;
-  border-radius: 12px;
-}
-
-/* Add Another Food Type Button */
-.btn-add {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 12px 20px;
-  font-size: 16px;
+  flex-direction: column;
   font-weight: bold;
-  color: #ffffff;
-  background-color: #4488a8;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  text-align: center;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  color: #555;
 }
 
-.btn-add:hover {
-  background-color: #eb20f290; /* Darker shade on hover */
-}
-
-.btn-add:active {
-  transform: scale(0.95);
-}
-
-/* Submit and Reset Buttons */
-button {
-  margin: 15px 5px 0;
-  padding: 15px 25px;
-  font-size: 18px; /* Larger font for visibility */
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  color: #ffffff;
-  font-family: "Arial", sans-serif;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-button:focus {
-  outline: none;
-}
-
-.btn-submit {
-  background: #3b9403;
-}
-
-.btn-submit:hover {
-  background: #086618;
-}
-
-.btn-reset {
-  background: #e31717;
-}
-
-.btn-reset:hover {
-  background: hsla(0, 74%, 45%, 0.932);
-}
-
-button:hover {
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
-}
- /* Smooth fade-in animation for the form */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.donor-form-container {
-  animation: fadeIn 0.8s ease-in-out;
-}
-input::placeholder {
-  color: #888; /* Light gray for placeholder text */
-  font-style: italic;
-}
-input:valid {
-  border-color: #42bb3b; /* Green for valid input */
-  box-shadow: 0 0 8px rgba(66, 187, 59, 0.5);
-}
-
-input:invalid {
-  border-color: #e6e9ee; /* Red for invalid input */
-  box-shadow: 0 0 8px rgba(59, 144, 234, 0.5);
-}
-button[aria-label]:hover::after {
-  content: attr(aria-label); /* Use the aria-label attribute */
-  position: absolute;
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 5px 10px;
+.donation-form input,
+.donation-form textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
   border-radius: 5px;
-  font-size: 12px;
-  top: -35px; /* Adjust position to appear above the button */
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap; /* Prevent text from wrapping */
-  z-index: 3; /* Ensure it's above other elements */
+  font-size: 16px;
+}
+
+.donation-form textarea {
+  resize: none;
+  height: 80px;
+}
+
+.donation-form button {
+  padding: 12px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.donation-form button:hover {
+  background: #0056b3;
 }

@@ -119,6 +119,10 @@
     transition: background 0.3s;
   }
   
+  .donor-login
+  {
+    background-color: #45a049 !important;
+  }
   button:hover {
     background-color: #45a049;
   }

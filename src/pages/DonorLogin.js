@@ -24,7 +24,7 @@ const DonorLogin = () => {
             <label htmlFor="password" style={{ color: "black" }}>Password:</label>
             <input type="password" id="password" placeholder="Enter your password" required />
           </div>
-          <button type="submit" onClick={() => navigate("/donor-home")}>Login</button>
+          <button className= "login-button" type="submit" onClick={() => navigate("/donor-home")}>Login</button>
         </form>
         <p className="signup-link" style={{ color: "black" }}>
           New user? <span onClick={() => navigate("/donor-signup")}>Signup here</span>

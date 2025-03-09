@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/DonorSignup.css';
+import axios from 'axios';
 
 const DonorSignup = () => {
   const navigate = useNavigate();
@@ -24,14 +25,30 @@ const DonorSignup = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    if (formData.password !== formData.confirmPassword) {
-      alert('Passwords do not match!');
-      return;
-    }
-    alert('Signup successful! Static data only for demo.');
-    navigate('/donor-login'); // Redirect to Donor Login after signup
+    try {
+      const response = await axios.post("http://localhost:5000/donor-signup", {
+        organizationType: formData.organizationType,
+        name: formData.name,
+        url: formData.url,
+        state: formData.state,
+        city: formData.city,
+        district: formData.district,
+        street: formData.street,
+        pinCode: formData.pinCode,
+        phoneNumber: formData.phoneNumber,
+        email: formData.email,
+        password: formData.password,
+      });
+
+      if (response.status === 201) {
+        alert("Signup successful!");
+
+      }
+    } catch (err) {
+      alert(err.response?.data?.message || "Signup failed. Please try again.");
+    } // Redirect to Donor Login after signup
   };
 
   return (

@@ -28,7 +28,7 @@ function ReceiverSignup() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/receiver/register",
+        "http://localhost:5000/receiver-signup",
         formData
       );
       console.log("Response from backend:", response.data);

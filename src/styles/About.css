@@ -4,6 +4,7 @@
     color: #0c0b0b;
     text-align: left;
     min-height: 100vh;
+    overflow-y: hidden !important;
   }
   
   .about-container h2,
