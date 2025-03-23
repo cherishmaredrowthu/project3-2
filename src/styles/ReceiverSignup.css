@@ -81,6 +81,38 @@ textarea {
 .submit-button:hover {
   background-color: #45a049;
 }
+.login-redirect {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adds space between text and button */
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: black; /* Ensures the text is properly black */
+}
+
+.login-button {
+  background: none;
+  border: none;
+  color: #007bff !important;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.3s ease-in-out;
+}
+
+.login-button:hover {
+  color: #0056b3;
+}
+
+.form-container .login-redirect {
+  color: black !important;
+}
+
+.form-container .login-button {
+  color: #007bff !important;
+}
 
 @media (max-width: 768px) {
   .form-grid {

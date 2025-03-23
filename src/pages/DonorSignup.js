@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/DonorSignup.css';
 import axios from 'axios';
+import bcrypt from 'bcryptjs';
+import '../styles/DonorSignup.css';
 
 const DonorSignup = () => {
   const navigate = useNavigate();
@@ -25,10 +26,20 @@ const DonorSignup = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (formData.password !== formData.confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+
     try {
-      const response = await axios.post("http://localhost:5000/donor-signup", {
+      // Generate salt and hash password
+      const salt = await bcrypt.genSalt(10);
+      const hashedPassword = await bcrypt.hash(formData.password, salt);
+
+      const response = await axios.post("http://localhost:5000/api/donor-signup", {
         organizationType: formData.organizationType,
         name: formData.name,
         url: formData.url,
@@ -39,16 +50,16 @@ const DonorSignup = () => {
         pinCode: formData.pinCode,
         phoneNumber: formData.phoneNumber,
         email: formData.email,
-        password: formData.password,
+        password: hashedPassword,  // Send hashed password
       });
 
       if (response.status === 201) {
         alert("Signup successful!");
-
+        navigate('/donor-login');
       }
     } catch (err) {
       alert(err.response?.data?.message || "Signup failed. Please try again.");
-    } // Redirect to Donor Login after signup
+    }
   };
 
   return (

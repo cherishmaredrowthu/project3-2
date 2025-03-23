@@ -1,55 +1,93 @@
-.donation-form-container {
-  max-width: 600px;
-  margin: 20px auto;
-  padding: 20px;
-  background: #f8f9fa;
-  border-radius: 8px;
-  overflow-y:inherit;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+/* General Form Styling */
+.post-food-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: 'Arial', sans-serif;
 }
 
-.donation-form-container h2 {
-  text-align: center;
-  color: #333;
-  margin-bottom: 20px;
+.post-food-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
 }
 
-.donation-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+/* Form Fields */
+.form-group {
+    margin-bottom: 15px;
 }
 
-.donation-form label {
-  display: flex;
-  flex-direction: column;
-  font-weight: bold;
-  color: #555;
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
 }
 
-.donation-form input,
-.donation-form textarea {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 16px;
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
 }
 
-.donation-form textarea {
-  resize: none;
-  height: 80px;
+input:focus, select:focus, textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-.donation-form button {
-  padding: 12px 20px;
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
+/* Location Button */
+.location-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
 }
 
-.donation-form button:hover {
-  background: #0056b3;
+.location-btn i {
+    margin-right: 8px;
+}
+
+.location-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Submit Button */
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .post-food-container {
+        max-width: 90%;
+        padding: 15px;
+    }
 }
