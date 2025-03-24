@@ -13,7 +13,11 @@ const receiverSchema = new mongoose.Schema({
     address: { type: String, required: true },
     city: { type: String, required: true },
     state: { type: String, required: true },
-    pincode: { type: String, required: true }
+    pincode: { type: String, required: true },
+    location: {
+        latitude: { type: Number, required: true },
+        longitude: { type: Number, required: true }
+    }
 });
 
 export default mongoose.model('Receiver', receiverSchema);

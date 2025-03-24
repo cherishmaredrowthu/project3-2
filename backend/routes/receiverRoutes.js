@@ -8,7 +8,11 @@ const router = express.Router();
 // Receiver Signup Route
 router.post('/receiver-signup', async (req, res) => {
     try {
-        const { orgName, email, password, contactNumber, address, website, locationPriority, kmRange, orgType, beneficiaries, city, state, pincode } = req.body;
+        const { 
+            orgName, email, password, contactNumber, address, website, 
+            locationPriority, kmRange, orgType, beneficiaries, city, 
+            state, pincode, latitude, longitude 
+        } = req.body;
 
         // Check if receiver already exists
         const existingReceiver = await Receiver.findOne({ email });
@@ -34,7 +38,11 @@ router.post('/receiver-signup', async (req, res) => {
             beneficiaries: Number(beneficiaries),
             city,
             state,
-            pincode
+            pincode,
+            location: {
+                latitude: Number(latitude),
+                longitude: Number(longitude)
+            }
         });
 
         // Save the new receiver
@@ -66,7 +74,11 @@ router.post('/receiver-login', async (req, res) => {
         }
 
         // Generate JWT token
-        const token = jwt.sign({ id: receiver._id }, process.env.JWT_SECRET || 'your_jwt_secret', { expiresIn: '1h' });
+        const token = jwt.sign(
+            { id: receiver._id },
+            process.env.JWT_SECRET || 'your_jwt_secret',
+            { expiresIn: '1h' }
+        );
 
         res.json({ message: 'Login successful', token });
     } catch (error) {

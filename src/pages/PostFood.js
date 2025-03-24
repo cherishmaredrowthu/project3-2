@@ -46,7 +46,7 @@ const PostFood = () => {
         const foodData = { foodItems, location, contact };
 
         try {
-            const response = await axios.post("http://localhost:5000/api/food/post-food", foodData);
+            const response = await axios.post("http://localhost:5000/api/post-food", foodData);
             setMessage(response.data.message);
             setFoodItems([{ name: "", quantity: "", expiry: "" }]);
             setContact({ name: "", phone: "" });

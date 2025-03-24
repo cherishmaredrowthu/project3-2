@@ -1,27 +1,24 @@
 import mongoose from "mongoose";
 
-
-
 const FoodItemSchema = new mongoose.Schema({
-    foodName: { type: String, required: true },
-    quantity: { type: Number, required: true },
-    expiryDate: { type: String, required: true },
-    expiryTime: { type: String, required: true },
-    foodCategory: { 
-        type: String, 
-        required: true, 
-        enum: ["Cooked", "Raw", "Packed", "Bakery", "Dairy", "Beverages"] 
-    }
+    name: { type: String, required: true },
+    quantity: { type: String, required: true },
+    expiry: { type: String, required: true }
 });
 
 const FoodSchema = new mongoose.Schema({
-    donorId: { type: mongoose.Schema.Types.ObjectId, ref: "Donor", required: true },
     foodItems: [FoodItemSchema],
-    address: { type: String, required: true },
-    latitude: { type: Number, required: true },
-    longitude: { type: Number, required: true },
-    pickupInstructions: String
+    location: {
+        address: { type: String, required: true },
+        latitude: { type: Number, required: true },
+        longitude: { type: Number, required: true }
+    },
+    contact: {
+        name: { type: String, required: true },
+        phone: { type: String, required: true, match: /^[0-9]{10}$/ }
+    },
+    accepting: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Receiver' }], // Array of receivers accepting
+    acceptedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'Receiver' } // Final accepted receiver
 }, { timestamps: true });
 
 export default mongoose.model("Food", FoodSchema);
-

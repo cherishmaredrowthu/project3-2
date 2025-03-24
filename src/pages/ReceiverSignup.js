@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../styles/ReceiverSignup.css";
@@ -20,7 +20,9 @@ function ReceiverSignup() {
     address: "",
     city: "",
     state: "",
-    pincode: ""
+    pincode: "",
+    latitude: "",
+    longitude: ""
   });
 
   const handleChange = (e) => {
@@ -46,6 +48,26 @@ function ReceiverSignup() {
 
   const handleLoginRedirect = () => {
     navigate("/receiver-login");
+  };
+
+  const fetchLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setFormData({
+            ...formData,
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude
+          });
+        },
+        (error) => {
+          console.error("Error getting location:", error);
+          alert("Unable to fetch location. Please enable GPS.");
+        }
+      );
+    } else {
+      alert("Geolocation is not supported by your browser.");
+    }
   };
 
   return (
@@ -120,6 +142,19 @@ function ReceiverSignup() {
             <div className="form-item">
               <label>Pincode:</label>
               <input type="text" name="pincode" value={formData.pincode} onChange={handleChange} required />
+            </div>
+            <div className="form-item">
+              <button type="button" onClick={fetchLocation} className="location-button">
+                Get My Location
+              </button>
+            </div>
+            <div className="form-item">
+              <label>Latitude:</label>
+              <input type="text" name="latitude" value={formData.latitude} readOnly />
+            </div>
+            <div className="form-item">
+              <label>Longitude:</label>
+              <input type="text" name="longitude" value={formData.longitude} readOnly />
             </div>
           </div>
           <div align="center">
